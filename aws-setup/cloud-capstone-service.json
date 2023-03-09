@@ -1,0 +1,28 @@
+{
+  "ServiceName": "cloud-capstone",
+  "SourceConfiguration": {
+    "AuthenticationConfiguration": {
+      "AccessRoleArn": "arn:aws:iam::818222958857:role/ecrAccessRole"
+    },
+    "AutoDeploymentsEnabled": true,
+    "ImageRepository": {
+      "ImageIdentifier": "818222958857.dkr.ecr.eu-central-1.amazonaws.com/cloud-capstone:latest",
+      "ImageConfiguration": {
+        "Port": "8080",
+        "RuntimeEnvironmentVariables": {
+          "AWS_REGION": "eu-central-1"
+        }
+      },
+      "ImageRepositoryType": "ECR"
+    }
+  },
+  "HealthCheckConfiguration": {
+    "Interval": 10,
+    "Path": "/actuator/health",
+    "Protocol": "HTTP"
+  },
+  "InstanceConfiguration": {
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
+  }
+}
