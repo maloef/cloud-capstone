@@ -16,6 +16,7 @@
       "ImageRepositoryType": "ECR"
     }
   },
+  "AutoScalingConfigurationArn": "arn:aws:apprunner:eu-central-1:818222958857:autoscalingconfiguration/CapstoneAutoScalingConfiguration/1/56eaf08171f04291973c43ab02714623",
   "HealthCheckConfiguration": {
     "Interval": 10,
     "Path": "/actuator/health",

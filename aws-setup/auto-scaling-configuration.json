@@ -1,0 +1,6 @@
+{
+  "AutoScalingConfigurationName": "CapstoneAutoScalingConfiguration",
+  "MaxConcurrency": 100,
+  "MaxSize": 5,
+  "MinSize": 2
+}
