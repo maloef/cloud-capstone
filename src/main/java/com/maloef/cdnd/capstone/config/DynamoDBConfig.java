@@ -27,13 +27,8 @@ public class DynamoDBConfig {
     public static final String DUE_DATE_LSI = "DueDateLsi";
     private static final String STRING = "S";
 
-    @Value("${dummy-secret}")
-    private String dummySecret;
-
     @Bean
     public DynamoDBMapper dynamoDBMapper(){
-        log.info("configuring dynamodb, dummy-secret: {}", dummySecret);
-
         AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard().build();
         initTable(dynamoDB);
 
