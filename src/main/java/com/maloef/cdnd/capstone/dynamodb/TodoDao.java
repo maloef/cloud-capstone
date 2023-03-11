@@ -3,6 +3,7 @@ package com.maloef.cdnd.capstone.dynamodb;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import com.amazonaws.xray.spring.aop.XRayEnabled;
 import com.maloef.cdnd.capstone.config.DynamoDBConfig;
 import com.maloef.cdnd.capstone.domain.Todo;
 import com.maloef.cdnd.capstone.exception.TodoNotFoundException;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@XRayEnabled
 @RequiredArgsConstructor
 @Slf4j
 public class TodoDao {
