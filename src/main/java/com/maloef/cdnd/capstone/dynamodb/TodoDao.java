@@ -3,6 +3,7 @@ package com.maloef.cdnd.capstone.dynamodb;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import com.maloef.cdnd.capstone.config.DynamoDBConfig;
 import com.maloef.cdnd.capstone.domain.Todo;
 import com.maloef.cdnd.capstone.exception.TodoNotFoundException;
 import com.maloef.cdnd.capstone.request.UpdateTodoRequest;
@@ -28,7 +29,7 @@ public class TodoDao {
 
         DynamoDBQueryExpression<Todo> query = new DynamoDBQueryExpression<>();
         query.setHashKeyValues(todo);
-        query.setIndexName("DueDateLsi");
+        query.setIndexName(DynamoDBConfig.DUE_DATE_LSI);
 
         List<Todo> todos = dynamoDBMapper.query(Todo.class, query);
         log.info("found {} todos for user {}", todos.size(), userId);

@@ -14,6 +14,3 @@ cloud:
 s3:
   image-bucket: cloud-capstone-images-818222958857
   signed-url-expires-in-seconds: 600
-
-#dynamodb:
-#  endpoint

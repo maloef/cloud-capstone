@@ -15,21 +15,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class CapstoneConfig {
 
     @Bean
-    public DynamoDBMapper dynamoDBMapper(){
-        return new DynamoDBMapper(AmazonDynamoDBClientBuilder.standard().build());
-    }
-
-    @Bean
-    public AmazonS3 amazonS3() {
-        return AmazonS3ClientBuilder.standard().build();
-    }
-
-    @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedMethods("*");
+                registry.addMapping("/**").allowedMethods("*").allowedOrigins("*").allowedHeaders("*");
             }
         };
     }
