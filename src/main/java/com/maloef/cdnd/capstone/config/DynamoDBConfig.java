@@ -8,6 +8,8 @@ import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.util.TableUtils;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@Slf4j
 public class DynamoDBConfig {
 
     private static final String TODO_TABLE_NAME = "Todo";
@@ -24,8 +27,13 @@ public class DynamoDBConfig {
     public static final String DUE_DATE_LSI = "DueDateLsi";
     private static final String STRING = "S";
 
+    @Value("${dummy-secret}")
+    private String dummySecret;
+
     @Bean
     public DynamoDBMapper dynamoDBMapper(){
+        log.info("configuring dynamodb, dummy-secret: {}", dummySecret);
+
         AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard().build();
         initTable(dynamoDB);
 
