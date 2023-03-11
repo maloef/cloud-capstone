@@ -24,7 +24,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn -B verify
+        run: mvn -B verify -DDUMMY_SECRET=${{ secrets.DDUMMY_SECRET }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
