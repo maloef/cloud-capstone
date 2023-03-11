@@ -15,6 +15,7 @@
 	<description>Capstone Project for Udacity&apos;s Cloud Developer Nanodegree</description>
 	<properties>
 		<java.version>19</java.version>
+		<spring-cloud.version>2.2.6.RELEASE</spring-cloud.version>
 	</properties>
 	<dependencies>
 	<!--suppress VulnerableLibrariesLocal -->
@@ -30,17 +31,9 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-actuator</artifactId>
 	</dependency>
-<!--	<dependency>-->
-<!--		<groupId>org.springframework.boot</groupId>-->
-<!--		<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-<!--	</dependency>-->
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-validation</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-aop</artifactId>
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>
 	</dependency>
 	<dependency>
 		<groupId>org.springframework.cloud</groupId>
@@ -48,19 +41,18 @@
 		<version>4.0.1</version>
 	</dependency>
 	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-validation</artifactId>
+	</dependency>
+	<dependency>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-aws</artifactId>
-		<version>2.2.6.RELEASE</version>
+		<version>${spring-cloud.version}</version>
 	</dependency>
 	<dependency>
 		<groupId>com.amazonaws</groupId>
 		<artifactId>aws-java-sdk-dynamodb</artifactId>
 		<version>1.12.421</version>
-	</dependency>
-	<dependency>
-		<groupId>com.amazonaws</groupId>
-		<artifactId>aws-xray-recorder-sdk-spring</artifactId>
-		<version>2.13.0</version>
 	</dependency>
 	<dependency>
 		<groupId>io.jsonwebtoken</groupId>
@@ -71,12 +63,6 @@
 		<groupId>javax.xml.bind</groupId>
 		<artifactId>jaxb-api</artifactId>
 		<version>2.3.1</version>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-		<version>4.0.1</version>
-		<scope>provided</scope>
 	</dependency>
 	<dependency>
 		<groupId>org.projectlombok</groupId>

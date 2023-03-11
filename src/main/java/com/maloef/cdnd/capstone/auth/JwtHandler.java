@@ -1,6 +1,5 @@
 package com.maloef.cdnd.capstone.auth;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtParser;
@@ -15,7 +14,6 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 
 @Service
-@XRayEnabled
 @Slf4j
 public class JwtHandler {
 
