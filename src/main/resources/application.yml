@@ -8,8 +8,8 @@ cloud:
       access-key: ${AWS_ACCESS_KEY_ID}
       secret-key:  ${AWS_SECRET_ACCESS_KEY}
     region:
-#      static: eu-central-1
-      auto: true
+      static: eu-central-1
+      auto: false
 
 s3:
   image-bucket: cloud-capstone-images-818222958857
