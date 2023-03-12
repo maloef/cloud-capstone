@@ -95,7 +95,7 @@ public class CapstoneController {
     @ExceptionHandler
     public ResponseEntity<?> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
         List<String> errors = exception.getBindingResult().getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).toList();
-        log.error("validation errors: ", errors);
+        log.error("validation errors: {}", errors);
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }

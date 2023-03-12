@@ -52,7 +52,7 @@ public class S3Config {
 
     private void configureBucketCorsConfig(AmazonS3 s3Client) {
         CORSRule corsRule = new CORSRule();
-        corsRule.setAllowedMethods(CORSRule.AllowedMethods.GET, CORSRule.AllowedMethods.PUT, CORSRule.AllowedMethods.HEAD);
+        corsRule.setAllowedMethods(CORSRule.AllowedMethods.GET, CORSRule.AllowedMethods.POST, CORSRule.AllowedMethods.PUT, CORSRule.AllowedMethods.DELETE, CORSRule.AllowedMethods.HEAD);
         corsRule.setAllowedOrigins("*");
         corsRule.setAllowedHeaders("*");
 
