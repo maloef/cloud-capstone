@@ -1,6 +1,7 @@
 package com.maloef.cdnd.capstone.config;
 
 import com.amazonaws.xray.javax.servlet.AWSXRayServletFilter;
+import com.amazonaws.xray.strategy.SegmentNamingStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -22,6 +23,6 @@ public class CorsConfig {
     }
     @Bean
     public Filter TracingFilter() {
-        return new AWSXRayServletFilter("Scorekeep");
+        return new AWSXRayServletFilter(SegmentNamingStrategy.dynamic("cloud-capstone", "*.example.com"));
     }
 }
