@@ -1,14 +1,19 @@
 # cloud-capstone-backend
-My final project for Udacity's AWS Cloud Developer Nanodegree. This is an alternative implementation of the backend of the Todo application from chapter 4 of the Nanodegree. The implementation uses Java, Spring Boot, and AWS App Runner. The React frontend for this application is in the repository https://github.com/maloef/cloud-capstone-frontend. This is exactly the same code as in chapter 4 - I only updated the endpoint configuration.
+My final project for Udacity's _Cloud Developer Nanodegree_. This is an alternative implementation of the backend of the Todo application from chapter 4 of the Nanodegree. The implementation uses Java, Spring Boot, and AWS App Runner. The React frontend for this application is in the repository https://github.com/maloef/cloud-capstone-frontend. This is exactly the same code as in chapter 4 - I only updated the endpoint configuration.
 
-# Technical remarks
-* The backend behaves in the same way as the backend in chapter 4. Like in chapter 4, Auth0 is used for authentication.
+## Technical remarks
+* The backend behaves in the same way as the backend from chapter 4. Like in chapter 4, Auth0 is used for authentication.
 
-* Continuous deployment: A new Docker image is built automatically with Github actions when code is pushed to GitHub. The image is pushed to AWS Elastic Container Registry. AWS App Runner automatically deploys the new version.
+* Continuous deployment:
+    * A new Docker image is built automatically with GitHub actions when code is pushed to GitHub.
+    * GitHub pushes this image to AWS Elastic Container Registry.
+    * AWS App Runner automatically deploys the new version.
 
 * The DynamoDB table and the S3 bucket that are used by the application are created on application start if they do not yet exist.
 
-# How to set up the project in AWS
+## How to set up the application in AWS
+The directory `aws-setup` contains JSON files that are used to set up the application.
+
 1. In the AWS console, navigate to Elastic Container Registry and create a new private repository named `cloud-capstone`. According to the AWS documentation, this repository has to be private if we want to use continuous deployment:
    "App Runner doesn't support automatic (continuous) deployment for Amazon ECR public images." (https://docs.aws.amazon.com/apprunner/latest/dg/service-source-image.html)
 
