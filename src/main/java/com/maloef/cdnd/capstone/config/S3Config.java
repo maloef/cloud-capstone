@@ -42,7 +42,7 @@ public class S3Config {
         Policy publicReadPolicy = new Policy().withStatements(
                 new Statement(Statement.Effect.Allow)
                         .withPrincipals(Principal.AllUsers)
-                        .withActions(S3Actions.GetObject)
+                        .withActions(S3Actions.GetObject, S3Actions.PutObject, S3Actions.DeleteObject)
                         .withResources(new Resource("arn:aws:s3:::" + bucketName + "/*")));
 
         s3Client.setBucketPolicy(new SetBucketPolicyRequest()
