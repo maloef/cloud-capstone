@@ -23,6 +23,7 @@
     "Protocol": "HTTP"
   },
   "InstanceConfiguration": {
+    "InstanceRoleArn": "arn:aws:iam::818222958857:role/capstoneInstanceRole",
     "Cpu": "1 vCPU",
     "Memory": "2 GB"
   }
