@@ -1,6 +1,5 @@
 package com.maloef.cdnd.capstone.businesslogic;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
 import com.maloef.cdnd.capstone.domain.Todo;
 import com.maloef.cdnd.capstone.dynamodb.TodoDao;
 import com.maloef.cdnd.capstone.request.CreateTodoRequest;
@@ -16,7 +15,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@XRayEnabled
 @RequiredArgsConstructor
 public class TodoHandler {
 

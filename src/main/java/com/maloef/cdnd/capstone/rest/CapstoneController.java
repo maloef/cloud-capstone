@@ -1,6 +1,5 @@
 package com.maloef.cdnd.capstone.rest;
 
-import com.amazonaws.xray.spring.aop.XRayEnabled;
 import com.maloef.cdnd.capstone.auth.JwtHandler;
 import com.maloef.cdnd.capstone.businesslogic.TodoHandler;
 import com.maloef.cdnd.capstone.domain.Todo;
@@ -26,7 +25,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
-@XRayEnabled
 @RequiredArgsConstructor
 @Slf4j
 public class CapstoneController {

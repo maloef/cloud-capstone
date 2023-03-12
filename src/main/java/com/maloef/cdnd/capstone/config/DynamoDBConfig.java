@@ -7,8 +7,6 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.util.TableUtils;
-import com.amazonaws.xray.AWSXRay;
-import com.amazonaws.xray.handlers.TracingHandler;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +29,7 @@ public class DynamoDBConfig {
 
     @Bean
     public DynamoDBMapper dynamoDBMapper(){
-        AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard().withRequestHandlers(new TracingHandler(AWSXRay.getGlobalRecorder())).build();
+        AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard().build();
         initTable(dynamoDB);
 
         return new DynamoDBMapper(dynamoDB);
