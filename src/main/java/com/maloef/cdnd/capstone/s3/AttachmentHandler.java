@@ -2,6 +2,7 @@ package com.maloef.cdnd.capstone.s3;
 
 import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.xray.spring.aop.XRayEnabled;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.net.URL;
 
 @Service
+@XRayEnabled
 @RequiredArgsConstructor
 @Slf4j
 public class AttachmentHandler {
