@@ -1,5 +1,6 @@
 .git
 .github
 .idea
-aws-setup
 .gitignore
+aws-setup
+screenshots

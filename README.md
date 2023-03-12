@@ -9,14 +9,13 @@ My final project for Udacity's AWS Cloud Developer Nanodegree. This is an altern
 * The DynamoDB table and the S3 bucket that are used by the application are created on application start if they do not yet exist.
 
 # How to set up the project in AWS
-1. In the AWS console, navigate to Elastic Container Registry and create a new private repository named cloud-capstone. According to the AWS documentation, the repository has to be private if we want to use continuous deployment:
-   "App Runner doesn't support automatic (continuous) deployment for Amazon ECR Public images." (https://docs.aws.amazon.com/apprunner/latest/dg/service-source-image.html)
+1. In the AWS console, navigate to Elastic Container Registry and create a new private repository named `cloud-capstone`. According to the AWS documentation, this repository has to be private if we want to use continuous deployment:
+   "App Runner doesn't support automatic (continuous) deployment for Amazon ECR public images." (https://docs.aws.amazon.com/apprunner/latest/dg/service-source-image.html)
 
 2. Create a role named `ecrAccessRole` that will be assumed by the service `build.apprunner.amazonaws.com`
 
 
     aws iam create-role --role-name ecrAccessRole --assume-role-policy-document file://ecrAccessRole-policy.json
-
 
 3. Allow this role to access ECR
 
@@ -28,14 +27,10 @@ My final project for Udacity's AWS Cloud Developer Nanodegree. This is an altern
 
     aws iam create-role --role-name capstoneInstanceRole --assume-role-policy-document file://capstoneInstanceRole-policy.json
 
-5. Allow this role to access DynamoDB
+5. Allow this role to access DynamoDB and S3
 
 
     aws iam attach-role-policy --role-name capstoneInstanceRole --policy-arn arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
-
-5. Allow this role to access S3
-
-
     aws iam attach-role-policy --role-name capstoneInstanceRole --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 
 6. Create an autoscaling configuration that will be used by our service. This step is optional - if no autoscaling configuration is defined, a default configuration will be used.
