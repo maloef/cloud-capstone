@@ -4,3 +4,4 @@
 .gitignore
 aws-setup
 screenshots
+*.yml
