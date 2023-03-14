@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloud-capstone-deployment
+  name: cloud-capstone
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/name: cloud-capstone
@@ -12,25 +12,8 @@ spec:
       labels:
         app.kubernetes.io/name: cloud-capstone
     spec:
-      serviceAccountName: capstone-service-account
       containers:
         - name: cloud-capstone-container
           image: public.ecr.aws/g4d6r5w8/cloud-capstone:latest
           ports:
-            - containerPort: 4567
-#          env:
-#            - name: AWS_REGION
-#              valueFrom:
-#                configMapKeyRef:
-#                  name: env-config
-#                  key: AWS_REGION
-#            - name: aws_access_key_id
-#              valueFrom:
-#                secretKeyRef:
-#                  name: env-secret
-#                  key: AWS_ACCESS_KEY_ID
-#            - name: aws_secret_access_key
-#              valueFrom:
-#                secretKeyRef:
-#                  name: env-secret
-#                  key: AWS_SECRET_ACCESS_KEY
+            - containerPort: 8080
