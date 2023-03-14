@@ -15,5 +15,6 @@ spec:
       containers:
         - name: cloud-capstone-container
           image: public.ecr.aws/g4d6r5w8/cloud-capstone:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
