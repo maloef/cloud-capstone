@@ -147,12 +147,12 @@
 	"variable": [
 		{
 			"key": "authToken",
-			"value": "<ENTER VALID JWT FROM CLIENT APP HERE>",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkNjVllhSzZpa3pzbXJoTUl4REJQdCJ9.eyJpc3MiOiJodHRwczovL2Rldi1iNWw4cHhnN3ozc251amR5LnVzLmF1dGgwLmNvbS8iLCJhdWQiOiJLMEtQeVhYcm13RExSTmlJckJ1bFpZcTkzTlJPTGVkcSIsImlhdCI6MTY3ODg5NzU4MywiZXhwIjoxNjc5MjU3NTgzLCJzdWIiOiJhdXRoMHw2M2ZkZTRhZjc4ZjNkYTBjZTQ4MGE2NWEiLCJhdF9oYXNoIjoiTzgweUQ4dGtCd0tId1M3VDBQUVVUQSIsInNpZCI6IjFDWTEzd2VVaXpxaXQ1QlBSZFJkUkY0dmVONjVFMnFYIiwibm9uY2UiOiJyRV90eU9tbmFvY19hSjdrMncxM0hhMmkxUTdLMWRQbSJ9.I_HYP4e_rDLpPO07K7XWPUGPdOGr1qGkvyltbeVXQ-kB0hY4hoUFbbpHzeWvaPtvn_ok7hMmKeU1BnL9_ew-R4yKC00WTGxkbZKuJrlkjpTlFefxyV2kjqPaDjvfK5psahWNlg1hz2lyx2xKpExqKP2VO1otfded_LJ7H1bqxkK3wWNzqIFtyAwNcgSij4Kg0BbLvp2pbUOGl6YNm9w14qznXsWm9zGoSBHTHgBwmBnJnZhBZWOInwJM_HqU6ffA7pu8yl_qhfdVbSluuqtCvHIjn6ufghRnM2er-LRd3FCoG44_JBuyDNaIti3O7ssSSE_2uAp5MrpdbSvBSqPdOw",
 			"type": "string"
 		},
 		{
 			"key": "baseUrl",
-			"value": "a2a7529a340d94d96b47de57c88c9666-189089577.eu-central-1.elb.amazonaws.com:8080",
+			"value": "a2cbb9cea6b0541e1b2d9f59e5ab7e36-1453076124.eu-central-1.elb.amazonaws.com:8080",
 			"type": "string"
 		}
 	]
