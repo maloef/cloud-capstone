@@ -19,11 +19,6 @@ public class JwtHandler {
 
     private JwtParser jwtParser = Jwts.parser().setSigningKey(readAuth0PublicKey());
 
-    public void verify(String jwt) {
-        Jws<Claims> jws = jwtParser.parseClaimsJws(jwt);
-        log.info("jws: {}", jws);
-    }
-
     public String extractUserIdFromToken(String token) {
         String jwt = (token.substring(0, 7).equalsIgnoreCase("Bearer ")) ? token.substring(7) : token;
         Jws<Claims> jws = jwtParser.parseClaimsJws(jwt);
