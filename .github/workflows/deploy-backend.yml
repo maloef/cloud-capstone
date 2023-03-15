@@ -1,4 +1,4 @@
-name: Deploy to AWS Elastic Container Registry
+name: Deploy backend to ECR
 
 env:
   AWS_REGION: eu-central-1 # used by maven test
@@ -8,11 +8,16 @@ env:
 on:
   push:
     branches: main
+    paths:
+      - backend/**
 
 jobs:
   build:
     runs-on: ubuntu-latest
     environment: dev
+    defaults:
+      run:
+        working-directory: backend
     steps:
       - name: Checkout
         uses: actions/checkout@v3
