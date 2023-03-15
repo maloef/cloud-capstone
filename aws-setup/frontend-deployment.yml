@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-capstone-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cloud-capstone-frontend
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cloud-capstone-frontend
+    spec:
+      containers:
+        - name: cloud-capstone--frontend-container
+          image: public.ecr.aws/g4d6r5w8/cloud-capstone-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
