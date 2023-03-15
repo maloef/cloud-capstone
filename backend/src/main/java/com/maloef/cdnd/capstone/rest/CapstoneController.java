@@ -85,7 +85,7 @@ public class CapstoneController {
      */
     @ExceptionHandler
     public ResponseEntity<?> handleJwtException(JwtException jwtException) {
-        log.warn("problem with jwt", jwtException);
+        log.warn("problem with jwt: ", jwtException);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(jwtException.toString());
     }
 
