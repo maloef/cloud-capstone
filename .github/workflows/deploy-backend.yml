@@ -49,7 +49,7 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
           REGISTRY_ALIAS: g4d6r5w8
-          REPOSITORY: cloud-capstone
+          REPOSITORY: cloud-capstone-backend
           IMAGE_TAG: latest
         run: |
           docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
