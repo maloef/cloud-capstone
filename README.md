@@ -6,9 +6,9 @@ My final project for Udacity's _Cloud Developer Nanodegree_. This is an alternat
 * The application uses a DynamoDB table and an S3 bucket. At startup, both are created if they don't exist yet.
 * The latest Docker image can be pulled from ECR with `docker pull public.ecr.aws/g4d6r5w8/cloud-capstone:latest`.
 * Continuous delivery:
-    * A new Docker image is built automatically with GitHub actions when code is pushed to GitHub. This is configured in the file `.github/workflows/deploy-to-ecr.yml`.
-    * GitHub pushes this image to AWS Elastic Container Registry.
-    * The lastest image can be deployed with `kubectl rollout restart deploy cloud-capstone`.
+    * New Docker images for backend and frontend are built automatically with GitHub actions when code is pushed to GitHub. This is configured in the two files in the folder `.github/workflows`.
+    * GitHub pushes these images to AWS Elastic Container Registry.
+    * The lastest image can be deployed with `kubectl rollout restart deploy cloud-capstone-backend` and `kubectl rollout restart deploy cloud-capstone-frontend`.
 
 ## Setting up the project
 * Check out the code.

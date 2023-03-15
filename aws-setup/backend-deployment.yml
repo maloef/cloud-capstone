@@ -13,7 +13,7 @@ spec:
         app.kubernetes.io/name: cloud-capstone-backend
     spec:
       containers:
-        - name: cloud-capstone--backend-container
+        - name: cloud-capstone-backend-container
           image: public.ecr.aws/g4d6r5w8/cloud-capstone-backend:latest
           imagePullPolicy: Always
           ports:

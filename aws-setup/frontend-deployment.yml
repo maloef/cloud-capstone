@@ -13,8 +13,8 @@ spec:
         app.kubernetes.io/name: cloud-capstone-frontend
     spec:
       containers:
-        - name: cloud-capstone--frontend-container
+        - name: cloud-capstone-frontend-container
           image: public.ecr.aws/g4d6r5w8/cloud-capstone-frontend:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 3000

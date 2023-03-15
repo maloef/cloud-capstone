@@ -1,4 +1,4 @@
-export const apiEndpoint = `http://a2cbb9cea6b0541e1b2d9f59e5ab7e36-1048984640.eu-central-1.elb.amazonaws.com:8080`
+export const apiEndpoint = `http://a2cbb9cea6b0541e1b2d9f59e5ab7e36-1453076124.eu-central-1.elb.amazonaws.com:8080`
 // export const apiEndpoint = `http://localhost:8080`
 
 export const authConfig = {
