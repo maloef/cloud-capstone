@@ -1,7 +1,5 @@
 name: Deploy frontend to ECR
 
-env:
-
 on:
   push:
     branches: main
@@ -11,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: dev
     defaults:
       run:
         working-directory: frontend
